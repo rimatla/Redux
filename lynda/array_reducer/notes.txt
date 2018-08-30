@@ -1,0 +1,13 @@
+*****************************************************************************************
+initialState.json
+- Is designed to be a snapshot of our state at any given time.
+- So we want to go ahead and add some sample data here so that we can see what state in our application may look like.
+
+- We've just identified the two critical components for a Redux application.
+- The actions that we saved in a file called constants.js and the state.
+- We drafted up a snapshot of that state in a file called initialState.json.
+
+*****************************************************************************************
+Start App
+$ npm start
+This will trigger babel-node

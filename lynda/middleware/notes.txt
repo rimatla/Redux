@@ -1,0 +1,13 @@
+Lynda.com Alex Banks
+
+*************************************************************************************************************************************************************
+MIDDLEWARE
+ - Middleware gives us the ability to add functionality directly to the store's dispatch pipeline.
+ - The subscribe method allows us to subscribe listeners to the store, and these listeners are invoked after the dispatch occurs.
+ - Middleware is far more powerful. Middleware gives us control over how actions are dispatched.
+ - We can add functionality BEFORE the action is dispatched or AFTER the action is dispatched.
+ - We can delay the dispatching of actions.
+ - We can even skip dispatching and action altogether.
+
+*************************************************************************************************************************************************************
+- Create a file that encapsulates all the code necessary to create stores for our application store/index.js

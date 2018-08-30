@@ -1,0 +1,9 @@
+- The vast amount of data manipulation in our apps happens through asynchronous channels.
+- Vanilla Redux isn't set up to handle asynchronous out of the box.
+
+- The propose of Redux Thunk is to give us direct control over the dispatch method.
+Dispatch is a method inside redux store that contains the app state.
+
+- You use dispatch under the hood on any vanilla redux app:
+Dispatch filters the actions and the remainder operations ie:
+React -> action creator -> action -> Dispatch [Middleware -> Reducers -> State ] -> React

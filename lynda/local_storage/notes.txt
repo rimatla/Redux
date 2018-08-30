@@ -1,0 +1,22 @@
+- Redux does work, and can be used on the server or in native applications built with Node.js.
+- However, Redux is primarily used to manage state and client applications.
+- So at this point, we're going to start running our code on the client side in the browser.
+- We'll use web pack along with babel to do that
+- We will also use the webpack-dev-server, which is an express server that we can use to host our app.
+- It helps improve our workflow by listening to any changes in our source code and automatically recreating the bundle
+
+*********************************************************************************************************************
+STORE
+- With Redux, we don't need to use our single appReducer to mutate the state, because the store will manage the state for us.
+- We can use the store.getState method to take a look at the current state.
+ie: store.getState();
+
+- We can use the dispatch method to mutate that state by sending an action to the store.
+ie: store.dispatch({ });
+
+- We can set up the initial state when we create a store, just by sending the initial state object as the second argument.
+ie: const store = createStore(appReducer, initialState);
+
+*********************************************************************************************************************
+SUBSCRIBE
+- The store has a subscribe method that will allow you to subscribe callback handlers that are invoked every time state changes.

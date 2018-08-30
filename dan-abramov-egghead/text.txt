@@ -1,0 +1,26 @@
+https://github.com/dwyl/learn-redux/blob/master/egghead.io_video_tutorial_notes.md
+
+PS: Use http server to view files
+https://www.npmjs.com/package/http-server
+
+Hard Reload it to see changes
+************************************************************************************
+
+- Redux Represents the whole state of an app as a single JS object.
+- State Tree is read only, we cant write to it or modify it.
+
+- To change the state you need to dispacth an action
+
+- An action is a plain js object `describing` the state change
+- Only req is that it had at least a type
+type: ""; 
+- strings types are suggested for serialization 
+
+- Pure function are functions whose `return value` depends solely on the values of its arguments.
+
+- Reducer is a pure function:
+ 1- takes the prev app state, 
+ 2- the action being dispatched 
+ 3- retuns the next app state
+
+

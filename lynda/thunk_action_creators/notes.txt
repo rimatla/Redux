@@ -1,0 +1,64 @@
+by Alex Banks
+- In Redux, the store is only intended to manage state data.
+- You can read current state from the store or mutate state by dispatching an action.
+- The store should not contain any application logic.
+- This means that your store and your reducers should not be involved in any of the following tasks:
+
+a)generating unique id's,
+b)reading or writing data to a persistence layer,
+c)mutating Global state,
+d)changing Global variables,
+e)fetching data from a rest endpoint or socket server if you had an Ajax request.
+
+- Your application should use the store.
+- The store should NOT be your application.
+- The store simply contains the data.
+
+Where's our logic supposed to go?
+
+*************************************************************************************************************************************************
+ACTION CREATORS
+- Action creators are functions that create and return actions.
+- They allow us to encapsulate the logic of our applications using functions, not objects.
+- Let’s demonstrate how using an action creator can make dispatching an addDay action much easier.
+- Action creators are functions that would encapsulate the logic.
+
+
+*************************************************************************************************************************************************
+REDUX-THUNK
+- Action creators are an ideal place to write your application logic, and writing that logic often means having to deal with asynchronicity.
+- When we make a request for some data from a web server, it takes time to receive a response.
+- We need to be able to work with action creators that can wait for a result before dispatching an action.
+- Redux-thunk is middleware that we can add to our store.
+- It allows us to build powerful action creators called thunks.
+- Thunks are higher order functions that give you control over when and how often the actions are dispatched.
+
+- Once you install redux-thunk
+- Add it it to your store/index.js
+
+
+*************************************************************************************************************************************************
+SUGGESTIONS
+- In order to demonstrate asynchronicity and how to build thunks that fetch data from a server.
+- Run the Express server locally to suggest ski resort names.
+$npm run suggestions.
+
+- app will run on port 3333 with a half second delay.
+- So we've included a delay inside of the suggestions server to demonstrate latency that you might experience over the internet.
+go to: localhost:3333/resorts
+- You'll see a list of names
+- Additionally http://localhost:3333/resorts/y(any letter here) will filter the name results
+
+*************************************************************************************************************************************************
+ ISOMORPHIC FETCH
+ - In order to make an Ajax request of our suggestion server, we're going to use a library called isomorphic fetch.
+ - Isomorphic fetch is an implementation of the whatwg-fetch specification that works both in Node JS and in the browser.
+ - So we can make fetch requests for URLs using this method
+ - Isomorphic fetch library returns a promise. That means that we can wait for an asynchronous response.
+
+ *************************************************************************************************************************************************
+RUN APP
+open a 2nd terminal tab and run both:
+$npm start
+$npm run suggestions
+

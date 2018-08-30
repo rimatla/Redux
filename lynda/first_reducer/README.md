@@ -1,0 +1,2 @@
+## REDUX
+#### Creating first reducer

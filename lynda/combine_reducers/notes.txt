@@ -1,0 +1,42 @@
+*****************************************************************************************
+Shell Commands
+$npm start
+$npm run challenge-a
+$npm run challenge-b
+$npm run challenge-c
+$npm run challenge-d
+
+
+*****************************************************************************************
+initialState.json
+- Is designed to be a snapshot of our state at any given time.
+- So we want to go ahead and add some sample data here so that we can see what state in our application may look like.
+
+- We've just identified the two critical components for a Redux application.
+- The actions that we saved in a file called constants.js and the state.
+- We drafted up a snapshot of that state in a file called initialState.json.
+
+*****************************************************************************************
+Start App
+$ npm start
+This will trigger babel-node
+
+*****************************************************************************************
+- We've built reducers to handle allSkiDays, goals, and errors.
+- We haven't built the reducers for the resortNames section, so that includes both fetching and suggestions.
+- These are the resort name suggestions.
+- We're going to make a request to a server, and when we make that request, fetching will be true.
+- When we receive a response, fetching is going to be changed to false.
+- With the response we're either going to have an error or we will have suggestions for resort names.
+
+*****************************************************************************************
+EXPECT
+- Expect is going to check the actualState against the expectedState, and throw an error if those two values are not equal.
+
+*****************************************************************************************
+Combine Reducers
+- Use the combined reducers method in Redux to combine all of the reducers that we've constructed into a single reducer function.
+- initialState.json is the state for our application. It's our single state object and this is the state that we would send to a single reducer.
+- Now, when we combine these reducers, we need to make sure that they are in the same shape as this object.
+- That means that all ski days, goals, errors, and resort names are on the SAME LEVEL, but fetching and suggestions have been combined under resort names.
+- You will notice that we've combined all of the reducers into one single reducer, but the SHAPE of the single reducer matches the shape of our initialState.json object.

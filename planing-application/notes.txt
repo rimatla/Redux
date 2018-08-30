@@ -1,0 +1,100 @@
+Lynda.com Alex Banks
+
+*************************************************************************************************************************************************************
+REDUX
+- Redux is a JavaScript library that you can use to manage client data within an application.
+- Redux is based on Flux, a design pattern that provides developers with an alternative to MVC.
+- It was designed to tackle the challenge of understanding how data changes flow through an application.
+- Using Redux, you can incorporate simplified approaches to data management within your client application that should make it easier to understand, easier to wrap your head around, and ultimately, easier to debug.
+
+- Redux does not require that you use React but it is designed to work with React.
+
+*************************************************************************************************************************************************************
+FLUX
+- Flux is a design pattern developed at Facebook to provide an alternative to MVC or MVP or MVVM.
+- These are all variations of the model-view-controller design pattern.
+- Each of these patterns allow for two-way data communication between models and views.
+- These patterns have models. Models are used to manage the data within an application.
+- The data from the model is used in a view.
+- Views are objects that present data as user interface. They represent what we see and interact with on the screen.
+
+- Models can feed data to multiple views.
+- When the user interacts with a view, the view, through a controller or a presenter, may update the data stored in a model.
+- Changing data in a model can trigger data changes in other views.
+- This means that in order to work with MVC, you need to be on top of your game.
+- Changing the way one model works could potentially cause unexpected consequences.
+- That level of complexity can be exaggerated at scale.
+
+- In addition to having many models and many views, large-scale applications also have many developers and teams working on the same codebase.
+- Making changes can be intimidating at this level.
+- So, Facebook developed a new approach, Flux.
+
+- In Flux, the data flows in one direction.
+- Changes are initiated with actions.
+- Actions are objects that describe what should change about the data.
+- Actions are dispatched with the dispatcher. The dispatcher is an object that sends the action to the appropriate store.
+- The store holds the data. It's like a model, but they're not exactly the same.
+- The store is responsible for updating or changing its data.
+- Finally, when the store updates the data, that change updates the view.
+
+- Now, if the user interacts with the view, a new action is generated and the process starts all over again. Data flows in one direction.
+- As a Flux application grows, it may include more stores and more views, but the dataflow remains unidirectional.
+- All changes in a Flux application begin by dispatching actions and end with updating views.
+- Flux itself is not a library, it's a design pattern that can be implemented with Javascript.
+
+- The Facebook Flux library only includes a generic dispatcher that you can use in your Flux applications.
+- So, the community got to work, and GitHub exploded with Javascript libraries that represent variations of this design pattern.
+- Each of these libraries represent a different implementation of Flux.
+- We have Flummox, Alt, Reflux, Fluxxor, McFly, there are too many to name.
+- Redux is one of these Flux implementations.
+- Due to its simplicity and ease of use, it has emerged as one of the winners in the Flux library shakedown.
+
+- Redux can help you build applications that are easier to understand.
+
+*************************************************************************************************************************************************************
+STORE
+
+- Redux isn't exactly Flux, it's Flux-like
+- Flux data flows in one direction. An action is sent to the dispatcher, and then dispatched to one or more stores before the view is updated.
+- Redux data still flows in one direction, but there's a big difference.
+- There's only one store.
+- With Redux you cannot use multiple stores, and because there is only one store, there's no need for a dispatcher.
+- The store will dispatch the actions directly.
+- Having one stores means that ALL of your state will be located in one place.
+- We refer to this as the single source of truth.
+- With Redux, modularity is obtained through functions.
+
+*************************************************************************************************************************************************************
+FUNCTIONAL PROGRAMING
+- Instead of breaking the state up into different objects, we will create functions that are designed to manage specific leaves and branches of this state tree.
+
+* PURE FUNCTIONS
+- Pure functions are functions that do not cause side effects.
+- Everything the function needs to operate is sent as arguments, and a new result is returned.
+- Pure functions do not change any of their arguments or any global variables.
+
+* IMMUTABILITY
+- To mutate is to change, so to be immutable is to be unchangeable.
+- We do not want to change the variables and objects in a functional application. Instead we want to produce new ones.
+
+* COMPOSITION
+- Composition refers to the ability to put functions together in a way that one function's output becomes the next function's input.
+- This means that the values returned from one function become the arguments of the next function.
+- Until eventually the last function returns the value we were looking for.
+
+*************************************************************************************************************************************************************
+REDUCERS
+Reducers are pure functions.
+
+****************************************************************************************
+
+                            PLANING APP
+
+*****************************************************************************************
+initialState.json
+- Is designed to be a snapshot of our state at any given time.
+- So we want to go ahead and add some sample data here so that we can see what state in our application may look like.
+
+- We've just identified the two critical components for a Redux application.
+- The actions that we saved in a file called constants.js and the state.
+- We drafted up a snapshot of that state in a file called initialState.json.
